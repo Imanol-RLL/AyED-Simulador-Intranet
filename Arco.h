@@ -5,7 +5,7 @@
 using namespace std;
 /*
 Esta clase representa el arco o la arista de un grafo.
-Es la entidad que conecta dos nodos o vértices y que se le asigna un peso o distancia.
+Es la entidad que conecta dos nodos o vértices y que se le asigna un peso o distancia.(peso = cantidad de paquetes que soporta)
 */
 class Arco
 {

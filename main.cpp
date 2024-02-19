@@ -8,37 +8,29 @@ int main(int argc, char **argv)
 {
 	Administrador admin; // crea el objeto administrador de red
 // Imagen
-    cout << endl;
-    cout << "  | ";
-    for (int i = 0; i < 20; i++) {
-        cout << "-";
-    }
-    cout << " |";
-    cout << endl;
-    cout << "  | ";
-    cout << " ";
-    cout << " ";
-    cout << " ";
-    cout << " ";
-    cout << " ";
-    cout << " ";
-    cout << " ";
-    cout << " ";
-    cout << " ";
-    cout << " ";
-    cout << " ";
-    cout << " ";
-    cout << " ";
-    cout << " ";
-    cout << " ";
-    cout << " |";
-    cout << endl;
-    cout << "  | ";
-    for (int i = 0; i < 20; i++) {
-        cout << "-";
-    }
-    cout << " |";
-    cout << endl;
+    std::cout << "                                  \\" << std::endl;
+    std::cout << "                                  `\,/" << std::endl;
+    std::cout << "                                  .-'-." << std::endl;
+    std::cout << "                                 '     `" << std::endl;
+    std::cout << "                                 `.   .'" << std::endl;
+    std::cout << "                          `._  .-~     ~-.   _,'" << std::endl;
+    std::cout << "                           ( )'           '.( )" << std::endl;
+    std::cout << "             `._    _       /               .'" << std::endl;
+    std::cout << "              ( )--' `-.  .'                 ;" << std::endl;
+    std::cout << "         .    .'        '.;                  ()" << std::endl;
+    std::cout << "          `.-.`           '                 .' " << std::endl;
+    std::cout << "----*-----;                                .' " << std::endl;
+    std::cout << "          .`-'.           ,                `" << std::endl;
+    std::cout << "         '    '.        .';                  ()" << std::endl;
+    std::cout << "              (_)-   .-'  `.                 ;" << std::endl;
+    std::cout << "             ,'   `-'       \               `" << std::endl;
+    std::cout << "                           (_).           .'(_) " << std::endl;
+    std::cout << "                          .'   '-._   _.-'    `" << std::endl;
+    std::cout << "                                 .'   `" << std::endl;
+    std::cout << "                                 '     ;" << std::endl;
+    std::cout << "                                  `-,-' " << std::endl;
+    std::cout << "                                   /`\\ " << std::endl;
+    std::cout << "                                 /`" << std::endl;
 
     // Título principal
     cout << endl;

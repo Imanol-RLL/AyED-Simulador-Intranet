@@ -30,11 +30,7 @@ void Router::recibir_paquetes(){
 }
 
 void Router::leer_conexiones(){
-	//cout<<"Router::leer_conexiones()"<<endl;
-	//cout<<"Soy el Router "<<this->ip<<" y tengo "<<conexiones_recepcion.tamanio()<<"conexiones de recepcion"<<endl;
-	//cout<<"***"<<conexiones_recepcion.tamanio()<<"***"<<endl;
 	for(int i=0; i<conexiones_recepcion.tamanio(); i++){
-		//cout<<"Hola1"<<endl;
 		//cout<<"conexion nro:"<<i<<" libre?: "<<conexiones_recepcion.elemento_pos(i)->conexion_libre()<<endl;
 		while(!conexiones_recepcion.elemento_pos(i)->conexion_libre()){//Mientras que la conexión en la posición i de la lsita de conexiones no esté libre...
 			Paquete paq_leido=conexiones_recepcion.elemento_pos(i)->leer();//esta instruccion terminará por liberar la conexion y finalizar el while.
@@ -117,14 +113,7 @@ int Router::buscar_en_tabla(int destino){
 	}
 	assert(0 && "Router::buscar_en_tabla -> \"No se encontró la etiqueta para el destino del paquete.\"");
 }
-/*
-void Router::mostrar_paquetes(int id_pag){
-	cout<<endl<<BOLD_GREEN "-----------------------------------------------------------------------------" ANSI_COLOR_RESET<<endl;
-	cout << BOLD_MAGENTA << ANSI_COLOR_BRIGHT << "R"<<this->ip<<":"<< BOLD_BLUE << ANSI_COLOR_BRIGHT << "TOTAL DE PAQUETES: "<<this->organizador_paquetes.tamanio()<<ANSI_COLOR_RESET<<endl;
-	//cout<<"R"<<this->ip<<":"<<endl;
-	cout<<BOLD_GREEN "-----------------------------------------------------------------------------" ANSI_COLOR_RESET<<endl;
-	this->organizador_paquetes.imprimir(id_pag);
-}*/
+
 void Router::mostrar_paquetes(int id_pag) {
     // Encabezado con colores y linea divisoria
     std::cout << std::endl

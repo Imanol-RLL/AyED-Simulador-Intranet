@@ -15,12 +15,10 @@ void Conexion::cargar(Paquete paq){
 	//assert(canal.cola_llena() && "Se intenta cargar una conexion que está saturada.");
 	this->canal.encolar(paq);
 }
-
 Paquete Conexion::leer(){
 	Paquete paq_leido = this->canal.primer_elemento();
 	this-> canal.desencolar();
 	return paq_leido;
-	
 }
 
 bool Conexion::conexion_saturada(){

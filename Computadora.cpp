@@ -7,7 +7,6 @@ Computadora::Computadora(vector<int> ip) : ip(ip),paginas_recibidas(){}
 }*/
 Computadora::~Computadora(){
 }
-
 void Computadora::recibir_pagina(Pagina pagina_recibida){
 	this->paginas_recibidas.agregar(pagina_recibida);
 }

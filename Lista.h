@@ -159,9 +159,7 @@ Lista<T>::Lista(const Lista<T>& src) :
     }
 
 }
-/*!End Snippet:copyconstructor*/
 
-/*!Begin Snippet:destructor*/
 // Destructor
 template <typename T>
 Lista<T>::~Lista(void) {

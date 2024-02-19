@@ -178,30 +178,9 @@ Lista<Etiqueta> Administrador::Dijkstra(int nodo_inicio){
                 pos = i;
             }
         }
-
-        //Q.mostrar();
-        //S.mostrar();
         Q.quitar_nodo_pos(pos);// quito el elemento
         S.agregar(nodo_elegido); // agrego el mas cercano
         //Optimizado
-        /*
-        for(int k=0;k<arcos.tamanio();k++){//para cada uno de los arcos del grafo.
-            arco_actual= &arcos.elemento_pos(k);
-            if(arco_actual->origen()==nodo_elegido){//Si el arco tiene como orígen el nodo que estamos analizando. Osea corroboro sobre los que son adyancentes al nodo_elegido.
-                if(!S.contiene(arco_actual->destino())){//Si el destino de ese arco NO está dentro de los nodos calculados.
-                    etiqueta_vieja = & etiquetas.elemento_pos(arco_actual->destino());
-                    peso_tray_nvo=etiquetas.elemento_pos(nodo_elegido).peso_total()+arco_actual->peso();
-                    //RELAJO - ACTUALIZO
-                    if(etiqueta_vieja->peso_total()>peso_tray_nvo){//Si el peso del trayecto de la etiqueta vieja es mayor que el peso del trayecto calculado.
-                        etiqueta_vieja->mod_peso_trayecto(peso_tray_nvo);
-                        //predecesores.insertar_nodo_pos(nodo_elegido, arco_actual->destino());
-                        predecesores[arco_actual->destino()]=nodo_elegido;
-                    }
-                }
-            }
-        }
-*/
-
 
 // Iterar sobre los arcos adyacentes al nodo elegido
         for (Arco* arco_actual : lista_adyacencia[nodo_elegido]) {
@@ -228,7 +207,6 @@ Lista<Etiqueta> Administrador::Dijkstra(int nodo_inicio){
     //OPTIMIZADO
     do {
         todos_adyacentes = true;
-
         for (size_t m = 0; m < predecesores.size(); ++m) {
             if (m != static_cast<size_t>(nodo_inicio)) {
                 predecesor = predecesores[predecesores[m]];
@@ -260,8 +238,7 @@ Lista<Etiqueta> Administrador::Dijkstra(int nodo_inicio){
 void Administrador::calcular_tablas(){
     for(int i=0; i<cant_routers; i++){
         Lista<Etiqueta> tabla = this->Dijkstra(i);
-        //cout<<"||||||||||||||||||||||||||||||||||||||"<<endl;
-        //tabla.imprimir();
+
         routers.elemento_pos(i).actualizar_tabla(tabla);
     }
 }
@@ -304,10 +281,6 @@ void Administrador::leer_archivo(){
                         //Router* ptr_router_i=&routers.elemento_pos(i);//puntero al router de la posicion i de la lista de routers de la red.
 
                         Computadora computadora_i_j(ip_comp_i_j);
-                        //computadora_i_j.imprimir();
-                        //cout<<endl;
-                        //Computadora *ptr_comp_i_j = &computadora_i_j;//puntero a la computadora recien creada
-                        //computadoras.agregar(ptr_comp_i_j);//se agrega el puntero de la computadora recien creada a la lista de computadoras de la red.
                         routers.elemento_pos(i).agregar_computadora(computadora_i_j);//se agrega la computadora a la lista de punteros a computadoras del router al que pertenece.
                     }
                 }
@@ -421,7 +394,6 @@ int Administrador::dibujar_grafo(){
     }
     return 0;
 }
-
 void Administrador::probar_conf(){
     routers.imprimir();
     cout<<"ARCOS:"<<endl;
@@ -432,7 +404,6 @@ void Administrador::probar_conf(){
         cout<<endl;
     }
 }
-
 void Administrador::sel_pagina(int pag){
     pag_sel = pag;
 }
