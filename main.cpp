@@ -47,7 +47,7 @@ int main(int argc, char **argv)
     cout << endl;
     cout << "**Trabajo Final - AyED 2024**" << endl;
     cout << "**Autor:** Imanol Rodriguez" << endl;
-    cout << "**Repositorio:** https://github.com/" << endl;
+    cout << "**Repositorio:** https://github.com/Imanol-RLL/AyED-Simulador-Intranet" << endl;
 
     // Fecha y créditos
     cout << endl;
@@ -76,7 +76,6 @@ int main(int argc, char **argv)
 
         // Leer el comando del usuario
         cin >> comando;
-
         // Validar la entrada
         if (!cin || comando < 0 || comando > 4) {
             cout << BOLD_RED << ANSI_COLOR_BRIGHT << "ERROR: Comando no válido." << ANSI_COLOR_RESET << endl;
@@ -84,7 +83,6 @@ int main(int argc, char **argv)
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             continue;
         }
-
         // Ejecutar la acción seleccionada
         switch (comando) {
             case 1:

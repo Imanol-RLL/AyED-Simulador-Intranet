@@ -20,7 +20,7 @@ Este proyecto es un simulador de conexiones a una intranet, donde un administrad
 
 Características:
 
-    Simulación realista: El simulador reproduce con precisión el comportamiento de una red real, incluyendo la latencia, el ancho de banda y la pérdida de paquetes.
+    Simulación realista: El simulador reproduce el comportamiento de una red.
     Algoritmo de Dijkstra: El simulador utiliza el algoritmo de Dijkstra para encontrar la ruta más eficiente entre dos puntos de la red.
     Potente motor C++: El simulador está diseñado en C++ para aprovechar al máximo la potencia de procesamiento del equipo.
     Compilación con Make: El proyecto se compila fácilmente con el comando make.

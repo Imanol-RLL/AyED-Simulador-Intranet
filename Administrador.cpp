@@ -294,8 +294,7 @@ void Administrador::leer_archivo(){
                 if (!(iss >> origen >> destino >> ancho_banda)) {
                     cout<<"Error en la lectura de la conexion de router."<<endl;
                     break;
-                } // error
-                //int peso = ancho_banda/routers.elemento_pos(router_j).total_paquetes();//No tiene propósito hacer esto al iniciar la simulación ya que los routers no tienen paquetes que enviar.
+                }
                 Conexion* ptr_conexion = new Conexion(origen, destino, ancho_banda);
                 conexiones.agregar(ptr_conexion);
                 ptr_conexion->imprimir();
