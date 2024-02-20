@@ -13,8 +13,8 @@
 
 
 #define INF 9999
-#define TAM_MAX_PAG 50
-#define TAM_MIN_PAG 10
+#define TAM_MAX_PAG 50  // Cantidad de maxima paquetes por pagina
+#define TAM_MIN_PAG 10  // Cantidad minima de paquetes por pagina
 
 Administrador::Administrador()
         :routers(),arcos(),conexiones(),cant_comp_por_router(0),cant_routers(0),total_pag(0),cant_pasos(1),pag_sel(-1){}
@@ -86,14 +86,11 @@ void Administrador::simular_un_paso(bool verbose){//recorrer la lista de routers
         cout<<BOLD_RED"PASARON "<<cant_pasos<<" PASOS DE SIMULACION"<<ANSI_COLOR_RESET<<endl;
         int nvo_peso;
         for(int i=0;i<arcos.tamanio();i++){
-            nvo_peso=routers.elemento_pos(arcos.elemento_pos(i).destino()).total_paquetes()/conexiones.elemento_pos(i)->peso();
+            nvo_peso=routers.elemento_pos(arcos.elemento_pos(i).destino()).total_paquetes()/conexiones.elemento_pos(i)->peso(); // calcula el peso del arco a partir de la relacion entre la cantidad de paquetes y ancho de banda
             assert(nvo_peso>=0 && "peso de arco negativo");
             if(nvo_peso>0){
                 arcos.elemento_pos(i).mod_peso(nvo_peso);
             }//Actualizará si y solo si el nvo_peso es mayor que cero
-
-
-
         }
         this->arcos.imprimir();
         this->calcular_tablas();
@@ -101,7 +98,7 @@ void Administrador::simular_un_paso(bool verbose){//recorrer la lista de routers
     //cout<<"Tamanio de Routers"<<routers.tamanio()<<endl;
     cout<<endl<<BOLD_CYAN<<"-----------------------------------------------RECEPCIÓN DE PAQUETES--------------------------------------------"<<ANSI_COLOR_RESET<<endl;
     for(int i=0;i<routers.tamanio();i++){
-        //cout<<"Recepcion del ROuter nro:"<<i<<endl;
+        cout<<"Recepcion del ROuter nro:"<<i<<endl;
         routers.elemento_pos(i).recibir_paquetes();
     }
     if(verbose){
@@ -112,14 +109,9 @@ void Administrador::simular_un_paso(bool verbose){//recorrer la lista de routers
     //cout<<"Tamanio de Routers"<<routers.tamanio()<<endl;
     cout<<endl<<BOLD_CYAN<<"-----------------------------------------------ENVÍO DE PAQUETES--------------------------------------------"<<ANSI_COLOR_RESET<<endl;
     for(int i=0;i<routers.tamanio();i++){
-        //cout<<"Envio del ROuter nro:"<<i<<endl;
+        cout<<"Envio del ROuter nro:"<<i<<endl;
         routers.elemento_pos(i).enviar_paquetes();
     }
-    /*if(verbose){
-        for(int i=0;i<routers.tamanio();i++){
-            routers.elemento_pos(i).mostrar_paquetes();
-        }
-    }*/
     this->cant_pasos++;
 }
 
@@ -144,8 +136,6 @@ Lista<Etiqueta> Administrador::Dijkstra(int nodo_inicio){
         }
         Q.agregar(i);
     }
-
-
 
     /*Con esta optimización, eliminamos la necesidad de iterar sobre todos los arcos del
  * grafo en cada iteración. En su lugar, accedemos directamente a los arcos adyacentes
@@ -366,10 +356,8 @@ int Administrador::dibujar_grafo(){
     cout<<mostrar_png<<endl;
 
     int Input[2], Output[2];
-
     pipe( Input );
     pipe( Output );
-
     if( fork() ){
         // Este es el proceso padre.
         // Close the reading end of the input pipe.

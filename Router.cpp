@@ -54,7 +54,7 @@ Pagina Router::construir_pagina(Paquete paq_leido){
 }//Devuelve una página con la informaxión del paquete paq_leido.
 
 void Router::enviar_pagina(Pagina pag_cons){
-	for(int i=0; i<computadoras.tamanio();i++){//recorre la lista de punteros a computadoras y le envpia la página a la maquina apuntada que tiene el mismo ip que el destino de la página.
+	for(int i=0; i<computadoras.tamanio();i++){//recorre la lista de punteros a computadoras y le envia la página a la maquina apuntada que tiene el mismo ip que el destino de la página.
 		if(computadoras.elemento_pos(i).obtener_ip() == pag_cons.obtener_ip_comp_destino())
 				computadoras.elemento_pos(i).recibir_pagina(pag_cons);
 	}
@@ -137,8 +137,6 @@ void Router::mostrar_paquetes(int id_pag) {
               << "-----------------------------------------------------------------------------"
               << ANSI_COLOR_RESET << std::endl;
 }
-
-
 
 void Router::agregar_conexion_envio(Conexion* con){
 	this->conexiones_envio.agregar(con);
