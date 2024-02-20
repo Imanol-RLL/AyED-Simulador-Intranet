@@ -56,7 +56,7 @@ make
 Uso:
 
 El simulador cuenta con una interfaz de línea de comandos intuitiva que facilita la gestión de las conexiones. Para más información sobre cómo usar el simulador, consulte la documentación:
-![Diagrama simple y consiso, de la estructura del programa]("Diagram 2024-02-20 19-23-06.png" "Diagrama UML")
+![Diagrama simple y consiso, de la estructura del programa](Diagram 2024-02-20 19-23-06.png "Diagrama UML")
 Explicacion:
 
 El simulador inicia en ./main.cpp. que mantiene una tarea activa como interfaz, donde permite iniciar la simulacion. seleccionar la pagina y revisar las conexiones, asi como terminar el simulador.
