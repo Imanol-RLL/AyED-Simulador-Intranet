@@ -27,12 +27,6 @@ Características:
     Ejecución en Linux: El simulador se ejecuta en sistemas operativos Linux.
     Semilla aleatoria ambiental: El simulador utiliza la capacidad de Linux de obtener una muestra ambiental aleatoria como semilla para la generación de tráfico.
 
-Beneficios:
-
-    Herramienta educativa: El simulador es una herramienta ideal para aprender sobre el funcionamiento de las redes y el algoritmo de Dijkstra.
-    Planificación de redes: El simulador puede utilizarse para planificar y optimizar redes reales.
-    Resolución de problemas: El simulador puede utilizarse para identificar y resolver problemas de red.
-
 Requisitos:
 
     Sistema operativo: Linux
