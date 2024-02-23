@@ -175,13 +175,13 @@ void Router::imprimir(){
 	for(int j=0;j<conexiones_recepcion.tamanio();j++){
 		cout<<"CONEXIONES_RECEPCION: "<<endl;
 		conexiones_recepcion.elemento_pos(j)->imprimir();
-		cout<<endl<<conexiones_recepcion.elemento_pos(j);
+		//cout<<endl<<conexiones_recepcion.elemento_pos(j);
 		cout<<endl;
 	}
 	for(int m=0;m<conexiones_recepcion.tamanio();m++){
 		cout<<"CONEXIONES_ENVIO: "<<endl;
 		conexiones_envio.elemento_pos(m)->imprimir();
-		cout<<endl<<conexiones_envio.elemento_pos(m);
+		//cout<<endl<<conexiones_envio.elemento_pos(m);
 		cout<<endl;
 	}
 }

@@ -13,7 +13,7 @@
 
 
 #define INF 9999
-#define TAM_MAX_PAG 50  // Cantidad de maxima paquetes por pagina
+#define TAM_MAX_PAG 30  // Cantidad de maxima paquetes por pagina
 #define TAM_MIN_PAG 10  // Cantidad minima de paquetes por pagina
 
 Administrador::Administrador()
@@ -55,7 +55,7 @@ void Administrador::crear_pagina(){
     nva_pag.imprimir();
     //Se envía la página creada al router que corresponde.
 
-    routers.elemento_pos(i).recibir_pagina(nva_pag);//Por razones de tiempo no se pudo implementar la colecciones de páginas recibidas y para envío que deberían compartir los routeres con sus máquinas por lo tanto se les envía las páginas creadas desde adminsuistrador,
+    routers.elemento_pos(i).recibir_pagina(nva_pag);//
     total_pag++;
 }
 
@@ -98,7 +98,7 @@ void Administrador::simular_un_paso(bool verbose){//recorrer la lista de routers
     //cout<<"Tamanio de Routers"<<routers.tamanio()<<endl;
     cout<<endl<<BOLD_CYAN<<"-----------------------------------------------RECEPCIÓN DE PAQUETES--------------------------------------------"<<ANSI_COLOR_RESET<<endl;
     for(int i=0;i<routers.tamanio();i++){
-        cout<<"Recepcion del ROuter nro:"<<i<<endl;
+        //cout<<"Recepcion del ROuter nro:"<<i<<endl;
         routers.elemento_pos(i).recibir_paquetes();
     }
     if(verbose){
@@ -109,7 +109,7 @@ void Administrador::simular_un_paso(bool verbose){//recorrer la lista de routers
     //cout<<"Tamanio de Routers"<<routers.tamanio()<<endl;
     cout<<endl<<BOLD_CYAN<<"-----------------------------------------------ENVÍO DE PAQUETES--------------------------------------------"<<ANSI_COLOR_RESET<<endl;
     for(int i=0;i<routers.tamanio();i++){
-        cout<<"Envio del ROuter nro:"<<i<<endl;
+        //cout<<"Envio del ROuter nro:"<<i<<endl;
         routers.elemento_pos(i).enviar_paquetes();
     }
     this->cant_pasos++;

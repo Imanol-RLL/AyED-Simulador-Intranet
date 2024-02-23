@@ -106,10 +106,15 @@ El código implementa el algoritmo de Dijkstra para encontrar la ruta más corta
 **Etiqueta:** Se define una estructura Etiqueta que contiene la información de cada nodo:
 
 **id:** Identificador del nodo.
-        distancia: Distancia mínima desde el nodo origen.
-        peso_total: Peso total del trayecto desde el nodo origen.
-        predecesor:Predecesor en la ruta más corta desde el nodo origen.
-        despacho: Siguiente salto en la ruta.
+
+distancia: Distancia mínima desde el nodo origen.
+
+peso_total: Peso total del trayecto desde el nodo origen.
+
+predecesor:Predecesor en la ruta más corta desde el nodo origen.
+
+despacho: Siguiente salto en la ruta.
+
 **Vector:** Se utiliza un vector para almacenar la lista de predecesores.
     Mapa no ordenado: Se utiliza un mapa no ordenado (std::unordered_map) para almacenar la lista de adyacencia.
 

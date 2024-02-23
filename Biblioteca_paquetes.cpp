@@ -15,7 +15,6 @@ int Biblioteca_paquetes::agregar_paquete(Paquete paq_recibido){
 	int router_destino = paq_recibido.obtener_ip_comp_destino()[0];
 
 	if(clasificador.tamanio()>0){//Si el clasificador no está vacío.
-		//cout<<"El clasificador no está vacío"<<endl;
 		for(i=0 ; i<clasificador.tamanio() ; i++){
 			if(clasificador.elemento_pos(i).obtener_duenio()==router_destino){
 				hay_cat_router=true;
@@ -35,30 +34,6 @@ int Biblioteca_paquetes::agregar_paquete(Paquete paq_recibido){
 						//cout<<"hay paquetes para la pagina"<<paq_recibido.obtener_id_pagina()<<endl;
 						clasificador.elemento_pos(i).elemento_pos(j).encolar(paq_recibido);
 						if(paq_recibido.obtener_ip_comp_destino()[0]==mi_router && paq_recibido.obtener_tamanio_pagina()==clasificador.elemento_pos(i).elemento_pos(j).tamanio()){//Si el paquete tiene como destino mi_router y además completa una página.
-							//Ordeno los paquetes en órden ascendente y Elimino la categoría de la página completada;
-							//cout<<"Pagina completa"<<endl;
-							vector<int> vec_des(clasificador.elemento_pos(i).elemento_pos(j).tamanio());
-							vector<int> vec_ord(vec_des.size());
-							int k=0;
-							while(k<clasificador.elemento_pos(i).elemento_pos(j).tamanio()){
-								vec_des[k]=clasificador.elemento_pos(i).elemento_pos(j).elemento_pos(k).obtener_nro_orden();
-								vec_ord[k]=k;
-								k++;
-							}
-							//ordena la cola de paquetes.
-							for(vector<int>::size_type l=0; l<vec_ord.size(); l++){
-								if(vec_ord == vec_des)
-									break;								
-								for(vector<int>::size_type m=0; m<vec_des.size(); m++){
-									if(vec_des[l]==vec_ord[m]){
-										int aux=0;
-										aux=vec_des[l];
-										vec_des[l]=vec_des[m];
-										vec_des[m]=aux;
-										//clasificador.elemento_pos(i).elemento_pos(j).intercambiar_pos_nodos(l,m);
-									}
-								}
-							}
 							clasificador.elemento_pos(i).quitar_nodo_pos(j);
 							return 1;
 						}
